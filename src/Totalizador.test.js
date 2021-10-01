@@ -44,6 +44,12 @@ describe("Totalizador ", () => {
   it("deberia calcular para su respectivo descuento y estado", () => {
     expect(calcularTotal(15000, 2, "UT")).toEqual(27495);
   });
+  it("deberia calcular para su respectivo descuento y estado", () => {
+    expect(calcularTotal(3500, 2, "TX")).toEqual(6947.5);
+  });
+  it("deberia calcular para su respectivo descuento y estado", () => {
+    expect(calcularTotal(500, 2, "CA")).toEqual(1052.5);
+  });
 });
 
 function impuestoEstado(estado) {
@@ -64,10 +70,9 @@ function descuentoTotal(subTotal) {
       else{
         if(subTotal == 3000)
           descuento = subTotal * 0.05
-        else{
+        else
           if(subTotal == 1000)
             descuento = subTotal * 0.03
-        }
       }
     }
   }
